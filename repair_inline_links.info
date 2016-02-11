@@ -1,0 +1,4 @@
+name = Repair Inline Links
+description = Rewrite on the fly /sites/something/ in text fields to be /sites/current-site/ to cope with issues in migration breaking relative links and images. Enable on relevant text formats and set to be one of the earlier filters.
+dependencies[] = filter
+core = 7.x

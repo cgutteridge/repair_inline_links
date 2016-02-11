@@ -1,0 +1,18 @@
+<?php
+ 
+/**
+ * Implements hook_filter_info().
+ */
+function repair_inline_links_filter_info() {
+  $filters = array();
+  $filters['repair_inline_links'] = array(
+    'title' => t('Repair inline links'),
+    'process callback' => '_repair_inline_links_filter',
+  );
+  return $filters;
+}
+
+function _repair_inline_links_filter($text, $filter, $format, $langcode, $cache, $cache_id) {
+
+  return preg_replace('/\/(sites\/[^\/]+)\//', '/'.conf_path().'/', $text);
+}
